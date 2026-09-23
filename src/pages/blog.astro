@@ -1,30 +1,12 @@
 ---
-import Navigation from './components/navigation.astro';
-import Footer from './components/Footer.astro';
-import './styles/style.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
+const allPosts = Object.values(import.meta.glob('../pages/posts/*.md', { eager: true }));
+const pageTitle = "Mailen te amo, debi hablarte desde el prope aaaah"
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Blog</title>
-	</head>
-	<body>
-        <Navigation />
-		<h1>Blog</h1>
-		<h1>Hola soy Charlysantyleo</h1>
-
-        <Footer />
-	</body>
-</html>
-
-<style>
-	h1 {
-		color: purple;
-		font-size: 4rem;
-	}
-</style>
+<BaseLayout pageTitle={pageTitle}>
+  <p>Me tardo mucho en responderle, pero es porque me pongo nervioso con cada mensaje xdddd</p>
+  <ul>
+    {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+  </ul>
+</BaseLayout>
