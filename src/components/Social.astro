@@ -7,7 +7,15 @@ const { platform, username } = Astro.props;
   a {
     padding: 0.5rem 1rem;
     color: white;
-    background-color: #4c1d95;
+    background-color: var(--accent);
     text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+
+  a:hover,
+  a:focus {
+    background-color: var(--accent-hover);
   }
 </style>

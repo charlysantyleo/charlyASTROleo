@@ -1,28 +1,15 @@
 ---
-import Navigation from '../components/navigation.astro';
-const nombre: string = "Charly";
-import '../styles/style.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Charly";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Charly</title>
-	</head>
-	<body>
-        <Navigation />
-		<h1>{nombre}</h1>
-		<h1>Hola soy charlyASTROleo</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Hola soy charlyASTROleo</h2>
+</BaseLayout>
 
 <style>
-	h1 {
-		color: purple;
-		font-size: 4rem;
-	}
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
 </style>
