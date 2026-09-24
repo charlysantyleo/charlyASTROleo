@@ -6,7 +6,7 @@ const identity = {
   firstName: "Santiago",
   country: "Mexico",
   occupation: "Dormir",
-  hobbies: ["photography", "birdwatching", "baseball"],
+  hobbies: ["Ver a Mailen", "Hablar con Mailen", "Seguramente besarla, pero no lo he hecho"],
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
@@ -21,23 +21,23 @@ const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>Here are a few facts about me:</p>
+  <p>Unos pequeños factos sobre mí:</p>
   <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+    <li>Me {identity.firstName}.</li>
+    <li>Vivo en {identity.country} me gusta mucho Mailen y {identity.occupation}.</li>
     {identity.hobbies.length >= 2 &&
-      <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+      <li>Mis hobbies son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
     }
   </ul>
-  <p>My skills are:</p>
+  <p>Medio se chambear con:</p>
   <ul>
     {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
-  {happy && <p>I am happy to be learning Astro!</p>}
+  {happy && <p>Eta practica fue muy buena y aprendi mucho.</p>}
 
-  {finished && <p>I finished this tutorial!</p>}
+  {finished && <p>Termine este tutorial!</p>}
 
-  {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+  {goal === 3 ? <p>Mi objetivo es casarme con Mailen.</p> : <p>Mi objetivo es tener hijos con Mailen.</p>}
 </BaseLayout>
 
 <style define:vars={{skillColor, fontweight, textCase}}>
